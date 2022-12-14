@@ -22,7 +22,7 @@ import re
 import sys
 import datetime
 import io
-from distutils.spawn import find_executable
+from shutil import which
 
 from subprocess import check_output
 
@@ -144,7 +144,7 @@ if __name__ == "__main__":
 
     files = None
 
-    if not find_executable("git"):
+    if not which("git"):
         print(terminal_colors.ERROR + "Missing git" + terminal_colors.END)
         sys.exit(1)
 
